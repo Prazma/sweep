@@ -1,1 +1,129 @@
-edit here
+<!doctype html>
+<html>
+<head>
+<title>Sweep</title>
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<link rel="apple-touch-icon" href="https://prazma.github.io/sweep/img/114E7B98-EBB4-45C8-954F-601056D7970F.jpeg">
+<meta name="apple-mobile-web-app-title" content="Sweep">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="white">
+<style>
+body {
+background: #4ADD7F;
+background: -webkit-linear-gradient(left, #28C75D , #4ADD7F);
+background: -o-linear-gradient(right, #28C75D, #4ADD7F);
+background: -moz-linear-gradient(right, #28C75D, #4ADD7F);
+background: linear-gradient(to right, #28C75D , #4ADD7F);
+color: #fff;
+font-family: sans-serif;
+font-weight: lighter;
+margin: 0;
+}
+.title {
+font-size: 50px;
+}
+.header {
+font-size: 25px;
+}
+.text {
+font-size: 18px;
+color: #252525;
+}
+#title {
+text-align: center;
+margin-top: 20px;
+-webkit-transition: 0.5s;
+transition: 0.5s;
+opacity: 0;
+display: none;
+}
+.btn {
+width: 90%;
+margin-top: 10px;
+background: #fff;
+border-radius: 6px;
+border: none;
+padding: 10px 0px 10px 0px;
+color: #252525;
+font-size: 20px;
+}
+.tbtn {
+width: 90%;
+margin-top: 10px;
+background: #4ADD7F;
+border-radius: 6px;
+border: none;
+padding: 10px 0px 10px 0px;
+color: #fff;
+font-size: 20px;
+}
+#selectport {
+text-align: center;
+margin-top: 20px;
+-webkit-transition: 0.5s;
+transition: 0.5s;
+opacity: 0;
+display: none;
+}
+.modal {
+margin-top: 15px;
+background: #fff;
+color: #252525;
+margin-right: auto;
+margin-left: auto;
+width: 90%;
+border-radius: 5px;
+padding: 3px 0px 3px 0px;
+}
+.modalContent {
+margin-top: 15px;
+width: 90%;
+margin-right: auto;
+margin-left: auto;
+margin-bottom: 15px;
+}
+strong {
+font-weight: normal;
+}
+.btnwrapper {
+text-align: center;
+}
+</style>
+</head>
+<body>
+<div id="title">
+<span class="title">Sweep</span>
+</div>
+<div id="selectport">
+<button id="new" class="btn" onclick="newMessage()">New Card</button><br>
+<button id="new" class="btn" onclick="newMessage()">New Collage</button><br>
+<button id="new" class="btn" onclick="newMessage()">New Poke</button><br>
+</div>
+<div class="modal">
+<div class="modalContent">
+<span class="header">Welcome to Sweep!</span><hr>
+<span class="text">With Sweep, you can <strong>create virtual cards and animated messages</strong> to your friends and family.<span><br><br>
+<div class="btnwrapper">
+<button class="tbtn">Next</button>
+</div>
+</div>
+</div>
+<script>
+if( localStorage.firstTime ) {
+init();
+} else {
+shouNew();
+}
+function init() {
+document.getElementById("title").style.display = "block";
+document.getElementById("selectport").style.display = "block";
+setTimeout( function () {
+document.getElementById("title").style.opacity = "1";
+}, 500)
+setTimeout( function () {
+document.getElementById("selectport").style.opacity = "1";
+}, 800)
+}
+</script>
+</body>
+</html>
