@@ -1,129 +1,117 @@
 <!doctype html>
 <html>
-<head>
-<title>Sweep</title>
-<meta name="viewport" content="width=device-width, user-scalable=no">
-<link rel="apple-touch-icon" href="https://prazma.github.io/sweep/img/114E7B98-EBB4-45C8-954F-601056D7970F.jpeg">
-<meta name="apple-mobile-web-app-title" content="Sweep">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="white">
-<style>
-body {
-background: #4ADD7F;
-background: -webkit-linear-gradient(left, #28C75D , #4ADD7F);
-background: -o-linear-gradient(right, #28C75D, #4ADD7F);
-background: -moz-linear-gradient(right, #28C75D, #4ADD7F);
-background: linear-gradient(to right, #28C75D , #4ADD7F);
-color: #fff;
-font-family: sans-serif;
-font-weight: lighter;
-margin: 0;
-}
-.title {
-font-size: 50px;
-}
-.header {
-font-size: 25px;
-}
-.text {
-font-size: 18px;
-color: #252525;
-}
-#title {
-text-align: center;
-margin-top: 20px;
--webkit-transition: 0.5s;
-transition: 0.5s;
-opacity: 0;
-display: none;
-}
-.btn {
-width: 90%;
-margin-top: 10px;
-background: #fff;
-border-radius: 6px;
-border: none;
-padding: 10px 0px 10px 0px;
-color: #252525;
-font-size: 20px;
-}
-.tbtn {
-width: 90%;
-margin-top: 10px;
-background: #4ADD7F;
-border-radius: 6px;
-border: none;
-padding: 10px 0px 10px 0px;
-color: #fff;
-font-size: 20px;
-}
-#selectport {
-text-align: center;
-margin-top: 20px;
--webkit-transition: 0.5s;
-transition: 0.5s;
-opacity: 0;
-display: none;
-}
-.modal {
-margin-top: 15px;
-background: #fff;
-color: #252525;
-margin-right: auto;
-margin-left: auto;
-width: 90%;
-border-radius: 5px;
-padding: 3px 0px 3px 0px;
-}
-.modalContent {
-margin-top: 15px;
-width: 90%;
-margin-right: auto;
-margin-left: auto;
-margin-bottom: 15px;
-}
-strong {
-font-weight: normal;
-}
-.btnwrapper {
-text-align: center;
-}
-</style>
-</head>
-<body>
-<div id="title">
-<span class="title">Sweep</span>
-</div>
-<div id="selectport">
-<button id="new" class="btn" onclick="newMessage()">New Card</button><br>
-<button id="new" class="btn" onclick="newMessage()">New Collage</button><br>
-<button id="new" class="btn" onclick="newMessage()">New Poke</button><br>
-</div>
-<div class="modal">
-<div class="modalContent">
-<span class="header">Welcome to Sweep!</span><hr>
-<span class="text">With Sweep, you can <strong>create virtual cards and animated messages</strong> to your friends and family.<span><br><br>
-<div class="btnwrapper">
-<button class="tbtn">Next</button>
-</div>
-</div>
-</div>
-<script>
-if( localStorage.firstTime ) {
-init();
-} else {
-shouNew();
-}
-function init() {
-document.getElementById("title").style.display = "block";
-document.getElementById("selectport").style.display = "block";
-setTimeout( function () {
-document.getElementById("title").style.opacity = "1";
-}, 500)
-setTimeout( function () {
-document.getElementById("selectport").style.opacity = "1";
-}, 800)
-}
-</script>
-</body>
+	<head>
+		<title>SweepNet</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<style>
+	body {
+	background: #191E24;
+	font-family: sans-serif;
+	font-weight: lighter;
+	margin: 0;
+	color: #fff;
+	}
+	.title {
+	color: #252525;
+	}
+	#displayPort{
+	background: #b6b6b6;
+	width: 185px;
+	height: 185px;
+	border-radius: 50%;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-left: auto;
+	border: 20px solid;
+	border-color: #7D7C74;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+		-webkit-transition: 0.5s;
+		transition: 0.5s;
+	}
+	button {
+	background: #24384E;
+	border: 1px solid #fff;
+	color: #fff;
+	padding: 8px 0px;
+	font-size: 20px;
+	border-radius: 40px;
+	width: 85%;
+	margin-top: 30px;
+	}
+	#proport {
+	text-align: center;
+	}
+		#welcome {
+			background: #fff;
+			position: fixed;
+			width: 90%;
+			left: 5%;
+			top: 50px;
+			border-radius: 6px;
+			color: #000;
+			text-align: center;
+			padding: 8px 0px;
+		}
+			.header {
+				font-size: 25px;
+			}
+			#darklow {
+				background: rgba( 0, 0, 0, 0.8);
+				position: fixed;
+				top: 0;
+				width: 100%;
+				height: 100vh;
+			}
+			.btnWhite {
+				color: #6f42c1;
+				background-color: #fff;
+				background-image: none;
+				border: 1px solid rgba(27,31,35,0.2);
+			}
+			.btnWhite:hover {
+				color: #fff;
+				background-color: #6f42c1;
+				background-image: none;
+				border-color: #6f42c1;
+			}
+	/*#24384E #7D7C74 #B6B6B6 on: #0859F2 #4080FC #191E24*/
+		</style>
+	</head>
+	<body>
+		<div id="darklow"></div>
+		<div id="welcome">
+			<br><span class="header">ようこそ！</span><br>
+			<span>Zippyはあなたのインターネットをワンクリックで確実に早くします。Zippyはもちろん永遠に無料です。<br><br><strong>「接続」を押して始めよう</strong><br><br><button class="btnWhite" onclick="hideWindow()">わかった</button></span><br><br>
+		</div>
+		<div id="proport">
+			<div id="displayPort"><div style="margin-top: 15px;"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNjRweCIgaGVpZ2h0PSI2NHB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNNTAyLjAwNCwxNTUuNzU3Yy03LjgxMS0yLjc2My0xNi4zODIsMS4zMjMtMTkuMTQ2LDkuMTMzbC0xMC4wODgsMjguNDg5QzQ0Ni4yNDYsMTAwLjY1OCwzNjAuNTc1LDMwLDI1Ni4wMDEsMzAgICAgYy05Ni4xMDMsMC0xNzkuOTUsNjAuNTMxLTIxMS45NjksMTQ4LjcwM2MtMi44MjgsNy43ODYsMS4xOTEsMTYuMzkyLDguOTc4LDE5LjIxOWM3Ljc4NiwyLjgyOCwxNi4zOTEtMS4xOTEsMTkuMjE4LTguOTc5ICAgIEM5OS44OCwxMTIuODAzLDE3Mi4zMjcsNjAsMjU2LjAwMSw2MGM5MS40MTMsMCwxNjguMzYyLDYzLjIyNCwxODkuNjUyLDE0OC4zNDJsLTI2Ljg3MS0zMS41OCAgICBjLTUuMzY4LTYuMzEtMTQuODM1LTcuMDctMjEuMTQ0LTEuNzAzYy02LjMwOSw1LjM2OC03LjA3MiwxNC44MzUtMS43MDMsMjEuMTQ1bDU5LjE1LDY5LjUxNyAgICBjNy41MTUsOC44MzQsMjEuNzQ0LDYuMDg5LDI1LjU2My00LjcxNGwzMC40ODgtODYuMTA0QzUxMy45MDIsMTY3LjA5NCw1MDkuODEyLDE1OC41MjEsNTAyLjAwNCwxNTUuNzU3eiIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ1OC45OTIsMzE0LjA3OGMtNy43ODgtMi44MjktMTYuMzksMS4xOTEtMTkuMjE4LDguOTc5QzQxMi4xMjIsMzk5LjE5NywzMzkuNjc1LDQ1MiwyNTYuMDAxLDQ1MiAgICBjLTkxLjQxMywwLTE2OC4zNjItNjMuMjI0LTE4OS42NTItMTQ4LjM0MmwyNi44NzEsMzEuNThjNS4zNjksNi4zMTIsMTQuODM3LDcuMDcxLDIxLjE0NCwxLjcwMyAgICBjNi4zMDktNS4zNjgsNy4wNzItMTQuODM1LDEuNzAzLTIxLjE0NWwtNTkuMTUtNjkuNTE3Yy03LjU3My04Ljg5OS0yMS43NjgtNi4wMi0yNS41NjMsNC43MTRMMC44NjUsMzM3LjA5NyAgICBjLTIuNzY2LDcuODEsMS4zMjQsMTYuMzgyLDkuMTMzLDE5LjE0NmM3LjgyNCwyLjc2OCwxNi4zODYtMS4zMzYsMTkuMTQ2LTkuMTMzbDEwLjA4OC0yOC40ODkgICAgQzY1Ljc1Niw0MTEuMzQyLDE1MS40MjcsNDgyLDI1Ni4wMDEsNDgyYzk2LjEwMywwLDE3OS45NS02MC41MzEsMjExLjk2OS0xNDguNzAzICAgIEM0NzAuNzk4LDMyNS41MTEsNDY2Ljc3OSwzMTYuOTA1LDQ1OC45OTIsMzE0LjA3OHoiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zNTcuMjY3LDIxOC42ODRjLTIuMzY5LTUuNTAzLTcuNzg1LTkuMDY3LTEzLjc3Ni05LjA2N2gtMzcuNzkzbDEyLjQwMS01MC4yODJjMS4xMDQtNC40NzgsMC4wODgtOS4yMTMtMi43NTUtMTIuODQzICAgIGMtMi44NDQtMy42My03LjE5OC01Ljc1LTExLjgwOC01Ljc1aC04NS4wMjVjLTYuOSwwLTEyLjkxMSw0LjcwOC0xNC41NjMsMTEuNDA4bC0zMCwxMjEuNjQyICAgIGMtMS4xMDQsNC40NzctMC4wODgsOS4yMTIsMi43NTUsMTIuODQyYzIuODQ0LDMuNjMsNy4xOTgsNS43NSwxMS44MDgsNS43NWgyOS4xNDVsLTEzLjk3Miw4MS4zMzQgICAgYy0xLjEyLDYuNTE3LDIuMTU5LDEyLjk5Nyw4LjA3MywxNS45NTVjNS45MzgsMi45NywxMy4wODQsMS42NzYsMTcuNjA4LTMuMTA4YzUuNTY1LTUuODg0LDExOC42MDctMTQ0LjU1MywxMjUuMDc5LTE1MS43ICAgIEMzNTguNTE1LDIzMC41MTQsMzU5LjYyNywyMjQuMTYyLDM1Ny4yNjcsMjE4LjY4NHoiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" height="150px"/></div></div>
+			<button onclick="turnon()" id="onBtn">TURN ON</button>
+		</div>
+		<script>
+			if(localStorage.mode) {
+				document.getElementById("welcome").style.display = "block";
+				localStorage.mode = "off";
+			} else {
+				localStorage.mode = "off";
+			}
+			function turnon() {
+				if( localStorage.mode == "off" ) {
+					document.getElementById("displayPort").style.background = "#4080FC";
+					document.getElementById("displayPort").style.borderColor = "#0859F2";
+					document.getElementById("onBtn").innerHTML = "TURN OFF";
+					localStorage.mode = "on";
+				} else {
+					document.getElementById("displayPort").style.background = "#b6b6b6";
+					document.getElementById("displayPort").style.borderColor = "#7D7C74";
+					document.getElementById("onBtn").innerHTML = "TURN ON";
+					localStorage.mode = "off";
+				}
+			}
+			function hideWindow() {
+				document.getElementById("welcome").style.display = "none";
+				document.getElementById("darklow").style.display = "none";
+			}
+		</script>
+	</body>
 </html>
