@@ -22,7 +22,7 @@
 	height: 185px;
 	border-radius: 50%;
 	margin-right: auto;
-	margin-top: 30px;
+	margin-top: 70px;
 	margin-left: auto;
 	border: 20px solid;
 	border-color: #7D7C74;
@@ -121,9 +121,24 @@
 				font-size: 10px;
 				font-weight: lighter;
 			}
-			.creditTextTwo {
+			.creditTextTwo { 
 				font-size: 20px;
 				font-weight: bold;
+			}
+			.transbtn {
+				background: transparent;
+				border: none;
+				width: auto;
+				margin-left: 15px;
+				margin-top: 5px;
+			}
+			.navwrap {
+				position: fixed;
+				top: 0;
+				width: 100%;
+				height: 50px;
+				background: #fff;
+				box-shadow: 0px 2px 5px #888888;
 			}
 	/*#24384E #7D7C74 #B6B6B6 on: #0859F2 #4080FC #191E24*/
 		</style>
@@ -149,6 +164,11 @@
 		</div>
 		<div id="credit">
 			<span class="creditTextOne">Zippy</span><span class="creditTextTwo">Net</span><span class="creditTextSub"> CO., LTD</span>
+		</div>
+		<div class="navwrap">
+			<button class="transbtn">
+				<svg aria-hidden="true" class="octicon octicon-three-bars" height="24" version="1.1" viewBox="0 0 12 16" width="18"><path fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"></path></svg>
+			</button>
 		</div>
 		<script>
 			if(localStorage.mode) {
