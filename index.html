@@ -389,14 +389,16 @@
 					document.getElementById("onBtn").style.display = "none";
 					document.getElementById("offBtn").style.display = "inline";
 					localStorage.mode = "on";
-				} else {
-					document.getElementById("displayPort").style.background = "#b6b6b6";
-					document.body.style.background = "#191E24";
-					document.getElementById("statics").style.opacity = "0";
-					document.getElementById("displayPort").style.borderColor = "#7D7C74";
-					document.getElementById("onBtn").style.display = "inine";
-					document.getElementById("offBtn").style.display = "none";
-					localStorage.mode = "off";
+					setTimeout( function () {
+						document.getElementById("displayPort").style.background = "#b6b6b6";
+						document.body.style.background = "#191E24";
+						document.getElementById("displayPort").style.borderColor = "#7D7C74";
+						document.getElementById("statics").style.opacity = "0";
+						document.getElementById("onBtn").style.display = "inline";
+						document.getElementById("onBtn").innerHTML = "再接続";
+						document.getElementById("offBtn").style.display = "none";
+						localStorage.mode = "off";
+					}, 900)
 				}
 			}
 			function hideWindow() {
@@ -454,8 +456,6 @@
 	
 	        stop: function() {
 	            UI.notice(UI.delimiter('Finished measures'));
-				      document.getElementById("step").innerHTML = "加速を続けています";
-				      document.getElementById("result").style.display = "block";
 	        },
 	
 	        abort: function() {
@@ -524,6 +524,7 @@
 				        UI.stop();
 						lastadapt = avg / 1024 / 1024;
 						frsstats = 1;
+						document.getElementById("step").innerHTML = "あともう少しです";
 						UI.start();
 					} else {
 						document.getElementById("displayPort").style.background = "#4080FC";
@@ -533,7 +534,9 @@
 						frsstats = 0;
 				        UI.stop();
 						baseadapt = acadapt / lastadapt;
-						document.getElementById("perc").innerHTML = Math.round(baseadapt * 1);
+						document.getElementById("step").innerHTML = "良いインターネットを！";
+						document.getElementById("result").style.display = "block";
+						document.getElementById("perc").innerHTML = Math.round(baseadapt * 10)/10;
 					}
 				}
 		    }
