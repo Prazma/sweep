@@ -56,7 +56,7 @@
 			#welcome {
 				background: #fff;
 				position: fixed;
-				width: 90%;
+				width: 90;
 				left: 5%;
 				top: 50px;
 				border-radius: 6px;
@@ -277,7 +277,7 @@
 					<span id="step">加速しています<br>少々お待ちください</span>
 				</div>
 				<div id="result">
-					<span class="bander"><span class="hiseek"><span id="perc">0</span>%</span><br>加速しました</span><br>
+					<span class="bander"><span class="hiseek"><span id="perc">0</span>倍</span><br>加速しました</span><br>
 					<button class="btnWhite" onclick="shouStatics()">詳しい情報</button>
 				</div>
 			</div>
@@ -527,7 +527,7 @@
 					console.log(lastadapt);
 					console.log(acadapt);
 					baseadapt += acadapt / lastadapt;
-					document.getElementById("perc").innerHTML = Math.round(baseadapt * 10);
+					document.getElementById("perc").innerHTML = Math.round(baseadapt);
 					setTimeout( function () {
 						UI.start();
 					}, 800)
