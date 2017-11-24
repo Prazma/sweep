@@ -534,7 +534,7 @@
 						frsstats = 0;
 				        UI.stop();
 						baseadapt = acadapt / lastadapt;
-						if( baseadapt < 1 ) {
+						if( baseadapt <= 1 ) {
 							document.getElementById("step").innerHTML = "早いインターネットを送るために必死に頑張っています...";
 							UI.start();
 						} else {
