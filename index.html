@@ -527,7 +527,7 @@
 					console.log(lastadapt);
 					console.log(acadapt);
 					baseadapt += acadapt / lastadapt;
-					document.getElementById("perc").innerHTML = Math.round(baseadapt);
+					document.getElementById("perc").innerHTML = Math.round(baseadapt * 10);
 					setTimeout( function () {
 						UI.start();
 					}, 800)
