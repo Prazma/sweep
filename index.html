@@ -314,6 +314,7 @@
 		<script>
 			var acadapt = 1;
 			var lastadapt = 0;
+			var frsstats = 0;
 			var baseadapt = 0;
 			localStorage.menuOpened = "closed";
 			if(localStorage.mode) {
@@ -518,19 +519,22 @@
 					document.body.style.background = "#191E24";
 					document.getElementById("displayPort").style.borderColor = "#7D7C74";
 				} else {
-					UI.notice('Final average speed: ' + UI.value(avg / 1024 / 1024, 'MBps'));
-			        UI.stop();
-					lastadapt = acadapt;
-					acadapt = avg / 1024 / 1024;
-					document.getElementById("displayPort").style.background = "#4080FC";
-					document.getElementById("displayPort").style.borderColor = "#0859F2";
-					console.log(lastadapt);
-					console.log(acadapt);
-					baseadapt += acadapt / lastadapt;
-					document.getElementById("perc").innerHTML = Math.round(baseadapt * 10);
-					setTimeout( function () {
+					if( frsstats == 0 ) {
+						UI.notice('Final average speed: ' + UI.value(avg / 1024 / 1024, 'MBps'));
+				        UI.stop();
+						lastadapt = avg / 1024 / 1024;
+						frsstats = 1;
 						UI.start();
-					}, 800)
+					} else {
+						document.getElementById("displayPort").style.background = "#4080FC";
+						document.getElementById("displayPort").style.borderColor = "#0859F2";
+						UI.notice('Final average speed: ' + UI.value(avg / 1024 / 1024, 'MBps'));
+						acadapt = avg / 1024 / 1024;
+						frsstats = 0;
+				        UI.stop();
+						baseadapt = acadapt / lastadapt;
+						document.getElementById("perc").innerHTML = Math.round(baseadapt * 1);
+					}
 				}
 		    }
 		
