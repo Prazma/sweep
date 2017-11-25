@@ -95,6 +95,7 @@
 				background: #f1f1f1;
 				padding: 10px 0px;
 				border-radius: 6px;
+				border: 1px solid #bfbfbf;
 				width: 80%;
 				margin-top: 25px;
 				margin-right: auto;
@@ -256,6 +257,10 @@
 				-webkit-font-smoothing: antialiased;
 				font-size: 21px;
 			}
+			#thunderPort {
+				transition: 1s;
+				-webkit-transition: 1s;
+			}
 			/*#24384E #7D7C74 #B6B6B6 on: #0859F2 #4080FC #191E24*/
 		</style>
 		<script src="https://prazma.github.io/zippy/js/netboost.stats.js"></script>
@@ -269,7 +274,7 @@
 			</div>
 		</div>
 		<div id="proport">
-			<div id="displayPort"><div style="margin-top: 15px;"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNjRweCIgaGVpZ2h0PSI2NHB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNNTAyLjAwNCwxNTUuNzU3Yy03LjgxMS0yLjc2My0xNi4zODIsMS4zMjMtMTkuMTQ2LDkuMTMzbC0xMC4wODgsMjguNDg5QzQ0Ni4yNDYsMTAwLjY1OCwzNjAuNTc1LDMwLDI1Ni4wMDEsMzAgICAgYy05Ni4xMDMsMC0xNzkuOTUsNjAuNTMxLTIxMS45NjksMTQ4LjcwM2MtMi44MjgsNy43ODYsMS4xOTEsMTYuMzkyLDguOTc4LDE5LjIxOWM3Ljc4NiwyLjgyOCwxNi4zOTEtMS4xOTEsMTkuMjE4LTguOTc5ICAgIEM5OS44OCwxMTIuODAzLDE3Mi4zMjcsNjAsMjU2LjAwMSw2MGM5MS40MTMsMCwxNjguMzYyLDYzLjIyNCwxODkuNjUyLDE0OC4zNDJsLTI2Ljg3MS0zMS41OCAgICBjLTUuMzY4LTYuMzEtMTQuODM1LTcuMDctMjEuMTQ0LTEuNzAzYy02LjMwOSw1LjM2OC03LjA3MiwxNC44MzUtMS43MDMsMjEuMTQ1bDU5LjE1LDY5LjUxNyAgICBjNy41MTUsOC44MzQsMjEuNzQ0LDYuMDg5LDI1LjU2My00LjcxNGwzMC40ODgtODYuMTA0QzUxMy45MDIsMTY3LjA5NCw1MDkuODEyLDE1OC41MjEsNTAyLjAwNCwxNTUuNzU3eiIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ1OC45OTIsMzE0LjA3OGMtNy43ODgtMi44MjktMTYuMzksMS4xOTEtMTkuMjE4LDguOTc5QzQxMi4xMjIsMzk5LjE5NywzMzkuNjc1LDQ1MiwyNTYuMDAxLDQ1MiAgICBjLTkxLjQxMywwLTE2OC4zNjItNjMuMjI0LTE4OS42NTItMTQ4LjM0MmwyNi44NzEsMzEuNThjNS4zNjksNi4zMTIsMTQuODM3LDcuMDcxLDIxLjE0NCwxLjcwMyAgICBjNi4zMDktNS4zNjgsNy4wNzItMTQuODM1LDEuNzAzLTIxLjE0NWwtNTkuMTUtNjkuNTE3Yy03LjU3My04Ljg5OS0yMS43NjgtNi4wMi0yNS41NjMsNC43MTRMMC44NjUsMzM3LjA5NyAgICBjLTIuNzY2LDcuODEsMS4zMjQsMTYuMzgyLDkuMTMzLDE5LjE0NmM3LjgyNCwyLjc2OCwxNi4zODYtMS4zMzYsMTkuMTQ2LTkuMTMzbDEwLjA4OC0yOC40ODkgICAgQzY1Ljc1Niw0MTEuMzQyLDE1MS40MjcsNDgyLDI1Ni4wMDEsNDgyYzk2LjEwMywwLDE3OS45NS02MC41MzEsMjExLjk2OS0xNDguNzAzICAgIEM0NzAuNzk4LDMyNS41MTEsNDY2Ljc3OSwzMTYuOTA1LDQ1OC45OTIsMzE0LjA3OHoiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zNTcuMjY3LDIxOC42ODRjLTIuMzY5LTUuNTAzLTcuNzg1LTkuMDY3LTEzLjc3Ni05LjA2N2gtMzcuNzkzbDEyLjQwMS01MC4yODJjMS4xMDQtNC40NzgsMC4wODgtOS4yMTMtMi43NTUtMTIuODQzICAgIGMtMi44NDQtMy42My03LjE5OC01Ljc1LTExLjgwOC01Ljc1aC04NS4wMjVjLTYuOSwwLTEyLjkxMSw0LjcwOC0xNC41NjMsMTEuNDA4bC0zMCwxMjEuNjQyICAgIGMtMS4xMDQsNC40NzctMC4wODgsOS4yMTIsMi43NTUsMTIuODQyYzIuODQ0LDMuNjMsNy4xOTgsNS43NSwxMS44MDgsNS43NWgyOS4xNDVsLTEzLjk3Miw4MS4zMzQgICAgYy0xLjEyLDYuNTE3LDIuMTU5LDEyLjk5Nyw4LjA3MywxNS45NTVjNS45MzgsMi45NywxMy4wODQsMS42NzYsMTcuNjA4LTMuMTA4YzUuNTY1LTUuODg0LDExOC42MDctMTQ0LjU1MywxMjUuMDc5LTE1MS43ICAgIEMzNTguNTE1LDIzMC41MTQsMzU5LjYyNywyMjQuMTYyLDM1Ny4yNjcsMjE4LjY4NHoiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" height="115px"/></div></div>
+			<div id="displayPort"><div style="margin-top: 15px;"><img id="thunderPort" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNjRweCIgaGVpZ2h0PSI2NHB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNNTAyLjAwNCwxNTUuNzU3Yy03LjgxMS0yLjc2My0xNi4zODIsMS4zMjMtMTkuMTQ2LDkuMTMzbC0xMC4wODgsMjguNDg5QzQ0Ni4yNDYsMTAwLjY1OCwzNjAuNTc1LDMwLDI1Ni4wMDEsMzAgICAgYy05Ni4xMDMsMC0xNzkuOTUsNjAuNTMxLTIxMS45NjksMTQ4LjcwM2MtMi44MjgsNy43ODYsMS4xOTEsMTYuMzkyLDguOTc4LDE5LjIxOWM3Ljc4NiwyLjgyOCwxNi4zOTEtMS4xOTEsMTkuMjE4LTguOTc5ICAgIEM5OS44OCwxMTIuODAzLDE3Mi4zMjcsNjAsMjU2LjAwMSw2MGM5MS40MTMsMCwxNjguMzYyLDYzLjIyNCwxODkuNjUyLDE0OC4zNDJsLTI2Ljg3MS0zMS41OCAgICBjLTUuMzY4LTYuMzEtMTQuODM1LTcuMDctMjEuMTQ0LTEuNzAzYy02LjMwOSw1LjM2OC03LjA3MiwxNC44MzUtMS43MDMsMjEuMTQ1bDU5LjE1LDY5LjUxNyAgICBjNy41MTUsOC44MzQsMjEuNzQ0LDYuMDg5LDI1LjU2My00LjcxNGwzMC40ODgtODYuMTA0QzUxMy45MDIsMTY3LjA5NCw1MDkuODEyLDE1OC41MjEsNTAyLjAwNCwxNTUuNzU3eiIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ1OC45OTIsMzE0LjA3OGMtNy43ODgtMi44MjktMTYuMzksMS4xOTEtMTkuMjE4LDguOTc5QzQxMi4xMjIsMzk5LjE5NywzMzkuNjc1LDQ1MiwyNTYuMDAxLDQ1MiAgICBjLTkxLjQxMywwLTE2OC4zNjItNjMuMjI0LTE4OS42NTItMTQ4LjM0MmwyNi44NzEsMzEuNThjNS4zNjksNi4zMTIsMTQuODM3LDcuMDcxLDIxLjE0NCwxLjcwMyAgICBjNi4zMDktNS4zNjgsNy4wNzItMTQuODM1LDEuNzAzLTIxLjE0NWwtNTkuMTUtNjkuNTE3Yy03LjU3My04Ljg5OS0yMS43NjgtNi4wMi0yNS41NjMsNC43MTRMMC44NjUsMzM3LjA5NyAgICBjLTIuNzY2LDcuODEsMS4zMjQsMTYuMzgyLDkuMTMzLDE5LjE0NmM3LjgyNCwyLjc2OCwxNi4zODYtMS4zMzYsMTkuMTQ2LTkuMTMzbDEwLjA4OC0yOC40ODkgICAgQzY1Ljc1Niw0MTEuMzQyLDE1MS40MjcsNDgyLDI1Ni4wMDEsNDgyYzk2LjEwMywwLDE3OS45NS02MC41MzEsMjExLjk2OS0xNDguNzAzICAgIEM0NzAuNzk4LDMyNS41MTEsNDY2Ljc3OSwzMTYuOTA1LDQ1OC45OTIsMzE0LjA3OHoiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zNTcuMjY3LDIxOC42ODRjLTIuMzY5LTUuNTAzLTcuNzg1LTkuMDY3LTEzLjc3Ni05LjA2N2gtMzcuNzkzbDEyLjQwMS01MC4yODJjMS4xMDQtNC40NzgsMC4wODgtOS4yMTMtMi43NTUtMTIuODQzICAgIGMtMi44NDQtMy42My03LjE5OC01Ljc1LTExLjgwOC01Ljc1aC04NS4wMjVjLTYuOSwwLTEyLjkxMSw0LjcwOC0xNC41NjMsMTEuNDA4bC0zMCwxMjEuNjQyICAgIGMtMS4xMDQsNC40NzctMC4wODgsOS4yMTIsMi43NTUsMTIuODQyYzIuODQ0LDMuNjMsNy4xOTgsNS43NSwxMS44MDgsNS43NWgyOS4xNDVsLTEzLjk3Miw4MS4zMzQgICAgYy0xLjEyLDYuNTE3LDIuMTU5LDEyLjk5Nyw4LjA3MywxNS45NTVjNS45MzgsMi45NywxMy4wODQsMS42NzYsMTcuNjA4LTMuMTA4YzUuNTY1LTUuODg0LDExOC42MDctMTQ0LjU1MywxMjUuMDc5LTE1MS43ICAgIEMzNTguNTE1LDIzMC41MTQsMzU5LjYyNywyMjQuMTYyLDM1Ny4yNjcsMjE4LjY4NHoiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" height="115px"/></div></div>
 			<button onclick="turnon()" id="onBtn" class="btnWhite" data-measure="upload">接続</button>
 			<button onclick="turnon()" id="offBtn" class="btnWhite" data-abort style="display: none" data-abort >切断</button>
 			<div id="statics">
@@ -432,9 +437,15 @@
 	        	start: function() {
 					var target = document.getElementById("onBtn");
 	        	    rawModule = $(target).data('measure');
+					$("#thunderPort").css({'transform': 'rotate(-360deg)'});
+					setTimeout( function () {
+						$("#thunderPort").css({'transform': 'rotate(0deg)'});
+					}, 1000);
 	        	    module = rawModule.charAt(0).toUpperCase() + rawModule.slice(1);
-			
-		   	        net[rawModule].start();
+					if( frsstats == 0 ) {
+						document.getElementById("step").innerHTML = "加速しています<br>少々お待ちください<br>（加速はZippyから離れても続きます）";
+					}
+					net[rawModule].start();
 		
 		            // The latency module doesn't have a start event, we must trigger it manually.
 		            if (rawModule == 'latency') {
@@ -533,14 +544,19 @@
 						acadapt = avg / 1024 / 1024;
 						frsstats = 0;
 				        UI.stop();
-						baseadapt = acadapt / lastadapt;
-						if( baseadapt <= 1 ) {
+						baseadapt = acadapt * 1.1 / lastadapt;
+						console.log(baseadapt);
+						if( baseadapt < 1.1 ) {
 							document.getElementById("step").innerHTML = "早いインターネットを送るために必死に頑張っています...";
 							UI.start();
 						} else {
 							document.getElementById("step").innerHTML = "良いインターネットを！";
 							document.getElementById("result").style.display = "block";
 							document.getElementById("perc").innerHTML = Math.round(baseadapt * 10)/10;
+							setTimeout( function () {
+								document.getElementById("step").innerHTML = "さらにもっと加速しています...";
+								UI.start;
+							}, 900)
 						}
 					}
 				}
