@@ -1,0 +1,592 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Zippy・インターネットを無料でもっと早くする方法</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
+    		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+		<link rel="shortcut icon" href="img/appicon.png" type="image/appicon.png">
+		<link rel="apple-touch-icon" href="img/appicon.png">
+		<meta name="apple-mobile-web-app-title" content="Zippy">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="white">
+		<style>
+			body {
+				-webkit-tap-highlight-color: transparent;
+				background: #191E24;
+				font-family: sans-serif;
+				font-weight: lighter;
+				margin: 0; !important
+				color: #fff;
+				transition: 0.5s;
+				-webkit-transition: 0.5s;
+			}
+			.title {
+				color: #252525;
+			}
+			#displayPort{
+				background: #b6b6b6;
+				width: 185px;
+				height: 185px;
+				border-radius: 50%;
+				margin-right: auto;
+				margin-top: 70px;
+				margin-left: auto;
+				border: 20px solid;
+				border-color: #7D7C74;
+				-webkit-background-clip: padding-box;
+				background-clip: padding-box;
+				-webkit-transition: 0.5s;
+				transition: 0.5s;
+			}
+			button {
+				background: #24384E;
+				border: 1px solid #fff;
+				color: #fff;
+				padding: 8px 0px;
+				font-size: 20px;
+				border-radius: 40px;
+				width: 85%;
+				margin-top: 30px;
+				outline: none;
+			}
+			#proport {
+				text-align: center;
+			}
+			#welcome {
+				background: #fff;
+				position: fixed;
+				width: 90;
+				left: 5%;
+				top: 50px;
+				border-radius: 6px;
+				color: #000;
+				text-align: center;
+				padding: 8px 0px;
+				z-index: 51;
+			}
+			.header {
+				font-size: 25px;
+			}
+			#darklow {
+				background: rgba( 0, 0, 0, 0.8);
+				position: fixed;
+				top: 0;
+				width: 100%;
+				height: 100vh;
+				z-index: 50;
+			}
+			.btnWhite {
+				color: #6f42c1;
+				background-color: #fff;
+				background-image: none;
+				border: 1px solid rgba(27,31,35,0.2);
+			}
+			.btnWhite:hover {
+				color: #fff;
+				background-color: #6f42c1;
+				background-image: none;
+				border-color: #6f42c1;
+			}
+			#statics {
+				position: fixed;
+				bottom: 55px;
+				left: 10%;
+				background: #f1f1f1;
+				padding: 10px 0px;
+				border-radius: 6px;
+				border: 1px solid #bfbfbf;
+				width: 80%;
+				margin-top: 25px;
+				margin-right: auto;
+				margin-left: auto;
+				color: #24384E;
+				transition: 0.5s;
+				-webkit-transition: 0.5s;
+				opacity: 0;
+			}
+			.bander {
+				font-size: 20px;
+			}
+			#credit {
+				background: #24384E;
+				position: fixed;
+				bottom: 0px;
+				width: 100%;
+				padding: 10px 0px;
+				transition: 0.5s;
+				-webkit-transition: 0.5s;
+				text-align: center;
+			}
+			.hiseek {
+				font-size: 40px;
+			}
+			#result {
+				display: none;
+			}
+			.creditTextOne {
+				font-size: 20px;
+				color: #fff;
+				font-weight: lighter;
+			}
+			.creditTextSub {
+				font-size: 10px;
+				color: #fff;
+				font-weight: lighter;
+			}
+			.creditTextTwo { 
+				font-size: 20px;
+				color: #fff;
+				font-weight: bold;
+			}
+			.transbtn {
+				background: transparent;
+				border: none;
+				width: auto;
+				margin-left: 15px;
+				margin-top: 5px;
+				float: left;
+			}
+			.navwrap {
+				position: fixed;
+				top: 0;
+				text-align: center;
+				width: 100%;
+				height: 50px;
+				background: #fff;
+				box-shadow: 0px 2px 5px #888888;
+				transition: 0.5s;
+				-webkit-transition: 0.5s;
+			}
+			#mncontent {
+				transition: 0.5s;
+				-webkit-transition: 0.5s;	
+			}
+			.mncabinet {
+				background: #ffffff;
+				color: #252525;
+				border-radius: 0px;
+				width: 100%;
+				padding: 15px 0px;
+				border: none;
+				margin-top: 0;
+				border-bottom: 1px solid #bfbfbf;
+			}
+			.mncabinet:hover {
+				background: #f1f1f1;
+			}
+			.profile {
+				border-top: 1px solid #bfbfbf;
+				border-bottom: 1px solid #bfbfbf;
+				background: #f8f8f8;
+				margin-top: 50px;
+			}
+			#profileIcon {
+				margin-top: 20px;
+			}
+			#output {
+				background: #252525;
+				margin-top: 20px;
+				color: #fff;
+				width: 90%;
+				margin-left: auto;
+				margin-right: auto;
+				height: 100px;
+				border-radius: 6px;
+				border: none;
+			}
+			.btn-toolbar {
+			    margin-bottom: 9px;
+			}
+		
+			.btn-toolbar .btn-group {
+			    margin-top: 9px;
+			}
+		
+			output {
+		    		margin-bottom: 40px;
+		    		border-radius: 4px;
+		    		height: 100px;
+				width: 90%;
+				margin-top: 20px;
+				margin-right: auto;
+				margin-left: auto;
+		   		padding: 9.5px;
+				background-color: #2d2d2d;
+				font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+				font-size: 90%;
+				color: #fff;
+				overflow: auto;
+			}
+		
+			.green {
+				color: #a9d3ab;
+			}
+		
+			.yellow {
+				color: #fed37f;
+			}
+		
+			.blue {
+				color: #7aabd4;
+			}
+		
+			@media (max-width:480px) {
+				.btn-toolbar {
+					text-align: center;
+				}
+				.btn-toolbar .btn-group {
+					float: none;
+				}
+			}
+			#upgradePort {
+				background: #2b3137;
+				position: fixed;
+				top: 0;
+				width: 100%;
+				height: 100vh;
+				text-align: center;
+			}
+			.cmhead {
+				font-size: 36px;
+				font-weight: 300;
+				color: #fff;
+			}
+			.cmspan {
+				color: #fff;
+				-webkit-font-smoothing: antialiased;
+				font-size: 21px;
+			}
+			#thunderPort {
+				transition: 1s;
+				-webkit-transition: 1s;
+			}
+			/*#24384E #7D7C74 #B6B6B6 on: #0859F2 #4080FC #191E24*/
+		</style>
+		<script src="https://prazma.github.io/zippy/js/netboost.stats.js"></script>
+	</head>
+	<body>
+		<div id="darklow"></div>
+		<div id="welcome">
+			<div style="width: 90%; margin-right: auto; margin-left: auto;">
+				<br><span class="header">ようこそ！</span><br>
+				<span>Zippyはあなたのインターネットをワンクリックで確実に早くします。Zippyはもちろん永遠に無料です。<br><br><strong>「接続」を押して始めよう</strong><br><br><button class="btnWhite" onclick="hideWindow()">わかった</button><br><br><span style="font-size: 10px;">無料アカウントからPremiumアカウントにアップグレードすることもできます</span></span><br><br>
+			</div>
+		</div>
+		<div id="proport">
+			<div id="displayPort"><div style="margin-top: 15px;"><img id="thunderPort" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNjRweCIgaGVpZ2h0PSI2NHB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNNTAyLjAwNCwxNTUuNzU3Yy03LjgxMS0yLjc2My0xNi4zODIsMS4zMjMtMTkuMTQ2LDkuMTMzbC0xMC4wODgsMjguNDg5QzQ0Ni4yNDYsMTAwLjY1OCwzNjAuNTc1LDMwLDI1Ni4wMDEsMzAgICAgYy05Ni4xMDMsMC0xNzkuOTUsNjAuNTMxLTIxMS45NjksMTQ4LjcwM2MtMi44MjgsNy43ODYsMS4xOTEsMTYuMzkyLDguOTc4LDE5LjIxOWM3Ljc4NiwyLjgyOCwxNi4zOTEtMS4xOTEsMTkuMjE4LTguOTc5ICAgIEM5OS44OCwxMTIuODAzLDE3Mi4zMjcsNjAsMjU2LjAwMSw2MGM5MS40MTMsMCwxNjguMzYyLDYzLjIyNCwxODkuNjUyLDE0OC4zNDJsLTI2Ljg3MS0zMS41OCAgICBjLTUuMzY4LTYuMzEtMTQuODM1LTcuMDctMjEuMTQ0LTEuNzAzYy02LjMwOSw1LjM2OC03LjA3MiwxNC44MzUtMS43MDMsMjEuMTQ1bDU5LjE1LDY5LjUxNyAgICBjNy41MTUsOC44MzQsMjEuNzQ0LDYuMDg5LDI1LjU2My00LjcxNGwzMC40ODgtODYuMTA0QzUxMy45MDIsMTY3LjA5NCw1MDkuODEyLDE1OC41MjEsNTAyLjAwNCwxNTUuNzU3eiIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ1OC45OTIsMzE0LjA3OGMtNy43ODgtMi44MjktMTYuMzksMS4xOTEtMTkuMjE4LDguOTc5QzQxMi4xMjIsMzk5LjE5NywzMzkuNjc1LDQ1MiwyNTYuMDAxLDQ1MiAgICBjLTkxLjQxMywwLTE2OC4zNjItNjMuMjI0LTE4OS42NTItMTQ4LjM0MmwyNi44NzEsMzEuNThjNS4zNjksNi4zMTIsMTQuODM3LDcuMDcxLDIxLjE0NCwxLjcwMyAgICBjNi4zMDktNS4zNjgsNy4wNzItMTQuODM1LDEuNzAzLTIxLjE0NWwtNTkuMTUtNjkuNTE3Yy03LjU3My04Ljg5OS0yMS43NjgtNi4wMi0yNS41NjMsNC43MTRMMC44NjUsMzM3LjA5NyAgICBjLTIuNzY2LDcuODEsMS4zMjQsMTYuMzgyLDkuMTMzLDE5LjE0NmM3LjgyNCwyLjc2OCwxNi4zODYtMS4zMzYsMTkuMTQ2LTkuMTMzbDEwLjA4OC0yOC40ODkgICAgQzY1Ljc1Niw0MTEuMzQyLDE1MS40MjcsNDgyLDI1Ni4wMDEsNDgyYzk2LjEwMywwLDE3OS45NS02MC41MzEsMjExLjk2OS0xNDguNzAzICAgIEM0NzAuNzk4LDMyNS41MTEsNDY2Ljc3OSwzMTYuOTA1LDQ1OC45OTIsMzE0LjA3OHoiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zNTcuMjY3LDIxOC42ODRjLTIuMzY5LTUuNTAzLTcuNzg1LTkuMDY3LTEzLjc3Ni05LjA2N2gtMzcuNzkzbDEyLjQwMS01MC4yODJjMS4xMDQtNC40NzgsMC4wODgtOS4yMTMtMi43NTUtMTIuODQzICAgIGMtMi44NDQtMy42My03LjE5OC01Ljc1LTExLjgwOC01Ljc1aC04NS4wMjVjLTYuOSwwLTEyLjkxMSw0LjcwOC0xNC41NjMsMTEuNDA4bC0zMCwxMjEuNjQyICAgIGMtMS4xMDQsNC40NzctMC4wODgsOS4yMTIsMi43NTUsMTIuODQyYzIuODQ0LDMuNjMsNy4xOTgsNS43NSwxMS44MDgsNS43NWgyOS4xNDVsLTEzLjk3Miw4MS4zMzQgICAgYy0xLjEyLDYuNTE3LDIuMTU5LDEyLjk5Nyw4LjA3MywxNS45NTVjNS45MzgsMi45NywxMy4wODQsMS42NzYsMTcuNjA4LTMuMTA4YzUuNTY1LTUuODg0LDExOC42MDctMTQ0LjU1MywxMjUuMDc5LTE1MS43ICAgIEMzNTguNTE1LDIzMC41MTQsMzU5LjYyNywyMjQuMTYyLDM1Ny4yNjcsMjE4LjY4NHoiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" height="115px"/></div></div>
+			<button onclick="turnon()" id="onBtn" class="btnWhite" data-measure="upload">接続</button>
+			<button onclick="turnon()" id="offBtn" class="btnWhite" data-abort style="display: none" data-abort >切断</button>
+			<div id="statics">
+				<div id="msg">
+					<span id="step">加速しています<br>少々お待ちください</span>
+				</div>
+				<div id="result">
+					<span class="bander"><span class="hiseek"><span id="perc">0</span><strong style="font-size: 16px">倍</strong></span><br>加速しました</span><br>
+					<button class="btnWhite" onclick="shouStatics()">詳しい情報</button>
+				</div>
+			</div>
+		</div>
+		<div id="credit">
+			<span class="creditTextOne">Zip</span><span class="creditTextTwo">Net</span><span class="creditTextSub"> CO., LTD</span>
+		</div>
+		<div class="navwrap" id="navsgo">
+			<button class="transbtn" id="menuBTN" onclick="opnMenu()"><svg aria-hidden="true" class="octicon octicon-three-bars" height="24" version="1.1" viewBox="0 0 12 16" width="18"><path fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"></path></svg></button>
+			<div id="mncontent" style="display: none; opacity: 0;">
+				<div class="profile">
+					<br><img id="profileIcon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0ODkuNyA0ODkuNyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg5LjcgNDg5Ljc7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPgo8Zz4KCTxnPgoJCTxjaXJjbGUgaWQ9IlhNTElEXzE5NDRfIiBzdHlsZT0iZmlsbDojQTdBOUFDOyIgY3g9IjI0NC45IiBjeT0iNDciIHI9IjM3LjgiLz4KCQk8Y2lyY2xlIGlkPSJYTUxJRF8xOTQyXyIgc3R5bGU9ImZpbGw6I0E3QTlBQzsiIGN4PSI0MTcuMyIgY3k9IjM0My4zIiByPSIzNy44Ii8+CgkJPGNpcmNsZSBpZD0iWE1MSURfMTk0MF8iIHN0eWxlPSJmaWxsOiNBN0E5QUM7IiBjeD0iNzIuNSIgY3k9IjM0My4zIiByPSIzNy44Ii8+CgkJPHBhdGggZD0iTTQ2NC4yLDE0Ni41YzAtMjUuOS0yMS00Ni45LTQ2LjktNDYuOWMtMTQuMSwwLTI2LjcsNi4yLTM1LjMsMTYuMUwyODkuMyw2MmMxLjYtNC43LDIuNS05LjgsMi41LTE1LjEgICAgYzAtMjUuOS0yMS00Ni45LTQ2LjktNDYuOVMxOTgsMjEsMTk4LDQ2LjljMCw1LjMsMC45LDEwLjMsMi41LDE1bC05Mi43LDUzLjdjLTguNi05LjgtMjEuMi0xNi4xLTM1LjMtMTYuMSAgICBjLTI1LjksMC00Ni45LDIxLTQ2LjksNDYuOWMwLDIyLjQsMTUuOCw0MS4yLDM2LjgsNDUuOGwwLjEsMTA1LjJjLTIxLjEsNC42LTM3LDIzLjQtMzcsNDUuOGMwLDI1LjksMjEsNDYuOSw0Ni45LDQ2LjkgICAgYzEzLjgsMCwyNi4yLTYsMzQuOC0xNS41bDkzLDUzLjdjLTEuNSw0LjYtMi4zLDkuNC0yLjMsMTQuNWMwLDI1LjksMjEsNDYuOSw0Ni45LDQ2LjlzNDYuOS0yMSw0Ni45LTQ2LjljMC01LjEtMC44LTkuOS0yLjMtMTQuNSAgICBsOTMtNTMuN2M4LjYsOS41LDIxLDE1LjUsMzQuOCwxNS41YzI1LjksMCw0Ni45LTIxLDQ2LjktNDYuOWMwLTIyLjctMTYuMy00MS44LTM3LjgtNDZWMTkyLjQgICAgQzQ0Ny45LDE4OC4zLDQ2NC4yLDE2OS4zLDQ2NC4yLDE0Ni41eiBNNDE3LjMsMTE3LjdjMTUuOSwwLDI4LjgsMTIuOSwyOC44LDI4LjhzLTEyLjksMjguOC0yOC44LDI4LjhzLTI4LjgtMTIuOS0yOC44LTI4LjggICAgUzQwMS41LDExNy43LDQxNy4zLDExNy43eiBNMjQ0LjksMTguMmMxNS45LDAsMjguOCwxMi45LDI4LjgsMjguOGMwLDQuOS0xLjIsOS41LTMuNCwxMy42Yy0wLjIsMC4yLTAuMywwLjQtMC41LDAuNyAgICBjLTAuMSwwLjItMC4yLDAuNC0wLjMsMC42Yy01LDguMy0xNC4yLDEzLjktMjQuNiwxMy45Yy0xNS45LDAtMjguOC0xMi45LTI4LjgtMjguOFMyMjksMTguMiwyNDQuOSwxOC4yeiBNNDMuNywxNDYuNSAgICBjMC0xNS45LDEyLjktMjguOCwyOC44LTI4LjhzMjguOCwxMi45LDI4LjgsMjguOHMtMTIuOSwyOC44LTI4LjgsMjguOFM0My43LDE2Mi40LDQzLjcsMTQ2LjV6IE03Mi41LDM3Mi4xICAgIGMtMTUuOSwwLTI4LjgtMTIuOS0yOC44LTI4LjhzMTIuOS0yOC44LDI4LjgtMjguOHMyOC44LDEyLjksMjguOCwyOC44QzEwMS4yLDM1OS4yLDg4LjMsMzcyLjEsNzIuNSwzNzIuMXogTTI0NC45LDQ3MS42ICAgIGMtMTUuOSwwLTI4LjgtMTIuOS0yOC44LTI4LjhTMjI5LDQxNCwyNDQuOSw0MTRzMjguOCwxMi45LDI4LjgsMjguOFMyNjAuOCw0NzEuNiwyNDQuOSw0NzEuNnogTTI4MC42LDQxMi41ICAgIGMtOC42LTEwLjEtMjEuNC0xNi42LTM1LjctMTYuNnMtMjcuMSw2LjQtMzUuNywxNi42bC05Mi42LTUzLjRjMS44LTQuOSwyLjgtMTAuMywyLjgtMTUuOGMwLTIzLjEtMTYuNy00Mi4zLTM4LjctNDYuMmwtMC4xLTEwNC41ICAgIGMyMi0zLjgsMzguOC0yMy4xLDM4LjgtNDYuMmMwLTUuMy0wLjktMTAuNC0yLjUtMTUuMWw5Mi43LTUzLjdjOC42LDkuOSwyMS4zLDE2LjEsMzUuNCwxNi4xYzE0LjEsMCwyNi43LTYuMiwzNS4zLTE2LjFsOTIuNyw1My43ICAgIGMtMS42LDQuNy0yLjUsOS44LTIuNSwxNS4xYzAsMjIuNywxNi4zLDQxLjgsMzcuOCw0NnYxMDQuOGMtMjEuNSw0LjItMzcuOCwyMy4yLTM3LjgsNDZjMCw1LjYsMSwxMC45LDIuOCwxNS44TDI4MC42LDQxMi41eiAgICAgTTQ0Ni4xLDM0My4zYzAsMTUuOS0xMi45LDI4LjgtMjguOCwyOC44cy0yOC44LTEyLjktMjguOC0yOC44czEyLjktMjguOCwyOC44LTI4LjhTNDQ2LjEsMzI3LjQsNDQ2LjEsMzQzLjN6Ii8+CgkJPHBhdGggZD0iTTI4OC42LDI4MS4xdi0zMi43YzUuNS01LjMsOC42LTEyLjYsOC42LTIwLjR2LTQyLjljMC0yNi4zLTIxLjQtNDcuNy00Ny43LTQ3LjdoLTkuMmMtMjYuMywwLTQ3LjcsMjEuNC00Ny43LDQ3LjdWMjI4ICAgIGMwLDcuOCwzLjIsMTUuMSw4LjYsMjAuNHYzMi43Yy0xMC40LDUuNC0zNS40LDE5LjEtNTguOCwzOC4zYy0zLjksMy4yLTQuNCw4LjktMS4yLDEyLjhzOC45LDQuNCwxMi44LDEuMiAgICBjMjUuOS0yMS4zLDUzLjktMzUuNCw1OS4zLTM4YzMuOC0xLjksNi4xLTUuNiw2LjEtOS45di00MS40YzAtMy0xLjUtNS45LTQtNy41Yy0yLjktMS45LTQuNi01LjEtNC42LTguNnYtNDIuOSAgICBjMC0xNi4zLDEzLjMtMjkuNiwyOS42LTI5LjZoOS4yYzE2LjMsMCwyOS42LDEzLjMsMjkuNiwyOS42VjIyOGMwLDMuNC0xLjcsNi42LTQuNiw4LjZjLTIuNSwxLjctNCw0LjUtNCw3LjV2NDEuNCAgICBjMCw0LjIsMi40LDgsNi4yLDkuOWM1LjQsMi42LDMzLjQsMTYuOCw1OS4zLDM4YzEuNywxLjQsMy43LDIuMSw1LjcsMi4xYzIuNiwwLDUuMi0xLjEsNy0zLjNjMy4yLTMuOSwyLjYtOS42LTEuMi0xMi44ICAgIEMzMjQsMzAwLjIsMjk5LDI4Ni40LDI4OC42LDI4MS4xeiIvPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" height="90px"/>
+					<br><span class="header" style="color: #000">ゲスト</span><br><br>
+				</div>
+				<button class="mncabinet" onclick="upgrade()">もっと加速する</button><br>
+				<button class="mncabinet" onclick="about()">Zippyについて</button><br>
+				<button class="mncabinet" onclick="settings()">設定</button><br>
+				<span>Console:</span>
+				<output></output>
+			</div>
+		</div>
+		<div id="upgradePort" style="display: none;">
+			<div style="width: 90%; margin-right: auto; margin-left: auto;">
+				<h1 class="cmhead">Zippy Premium<br>もっと早いネットをこれまで以上に早く</h1>
+				<p class="cmspan">Zippy Premiumであなたのインターネットをもっと早くして、あなたの生活をより快適にします。</p>
+				<button class="cmspan" style="background: #643ab0">月額７００円で始める</button><br>
+				<span style="font-size: 15px" class="cmspan">一ヶ月後、勝手に清算されることはありません</span><br>
+				<button class="cmspan">無料で一ヶ月試す</button><br>
+				<span style="font-size: 15px" class="cmspan">一ヶ月後、勝手に清算されることはありません</span>
+				<hr>
+				<button class="cmspan" onclick="closeupdport()">もどる</button>
+			</div>
+		</div>
+		<script>
+			var acadapt = 1;
+			var lastadapt = 0;
+			var frsstats = 0;
+			var baseadapt = 0;
+			localStorage.menuOpened = "closed";
+			if(localStorage.mode) {
+				document.getElementById("welcome").style.display = "none";
+				document.getElementById("darklow").style.display = "none";
+				init();
+			} else {
+				localStorage.mode = "off";
+			}
+			function closeupdport() {
+				document.getElementById("upgradePort").style.display = "none";
+			}
+			function upgrade() {
+				document.getElementById("upgradePort").style.display = "block";
+			}
+			function about() {
+				
+			}
+			function settings() {
+				
+			}
+			function opnMenu() {
+				var opnMN = localStorage.menuOpened;
+				if( opnMN == "closed" ) {
+					document.getElementById("navsgo").style.height = "100vh";
+					document.getElementById("navsgo").style.opacity = "0.9";
+					document.getElementById("mncontent").style.display = "block";
+					document.getElementById("menuBTN").disabled = true;
+					setTimeout( function () {
+						document.getElementById("menuBTN").disabled = false;
+						document.getElementById("mncontent").style.opacity = "1";
+					}, 500);
+					localStorage.menuOpened = "opened";
+				} else {
+					document.getElementById("navsgo").style.height = "50px";
+					document.getElementById("navsgo").style.opacity = "1";
+					document.getElementById("mncontent").style.opacity = "0";
+					document.getElementById("menuBTN").disabled = true;
+					setTimeout( function () {
+						document.getElementById("menuBTN").disabled = false;
+						document.getElementById("mncontent").style.display = "none";
+					}, 500);
+					localStorage.menuOpened = "closed";
+				}
+			}
+			function turnon() {
+				if( localStorage.mode == "off" ) {
+					document.getElementById("displayPort").style.background = "#4080FC";
+					document.body.style.background = "#fff";
+					document.getElementById("displayPort").style.borderColor = "#0859F2";
+					document.getElementById("onBtn").style.display = "none";
+					document.getElementById("offBtn").style.display = "inline";
+					document.getElementById("statics").style.opacity = "1";
+					localStorage.mode = "on";
+				} else {
+					document.getElementById("displayPort").style.background = "#b6b6b6";
+					document.body.style.background = "#191E24";
+					document.getElementById("displayPort").style.borderColor = "#7D7C74";
+					document.getElementById("statics").style.opacity = "0";
+					document.getElementById("onBtn").style.display = "inline";
+					document.getElementById("offBtn").style.display = "none";
+					localStorage.mode = "off";
+					abort();
+				}
+			}
+			function init() {
+				if( localStorage.mode == "on" ) {
+					document.getElementById("displayPort").style.background = "#4080FC";
+					document.body.style.background = "#fff";
+					document.getElementById("displayPort").style.borderColor = "#0859F2";
+					document.getElementById("statics").style.opacity = "1";
+					document.getElementById("onBtn").style.display = "none";
+					document.getElementById("offBtn").style.display = "inline";
+					localStorage.mode = "on";
+					setTimeout( function () {
+						document.getElementById("displayPort").style.background = "#b6b6b6";
+						document.body.style.background = "#191E24";
+						document.getElementById("displayPort").style.borderColor = "#7D7C74";
+						document.getElementById("statics").style.opacity = "0";
+						document.getElementById("onBtn").style.display = "inline";
+						document.getElementById("onBtn").innerHTML = "再接続";
+						document.getElementById("offBtn").style.display = "none";
+						localStorage.mode = "off";
+					}, 900)
+				}
+			}
+			function hideWindow() {
+				document.getElementById("welcome").style.display = "none";
+				document.getElementById("darklow").style.display = "none";
+			}
+		</script>
+		<script src="https://prazma.github.io/zippy/js/netboost.stats.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tooltip.min.js"></script>
+		<script>
+			$(function() {
+
+			    var module; // Current Network.js' module
+
+		    	/*
+		    	 * Tooltips
+		    	 */
+
+			    $('.btn-group').tooltip();
+
+			    /*
+			     * UI
+			     */
+
+			    var UI = {
+			        $btnStart: $('[data-measure]'),
+	    		    $btnAbort: $('#offBtn'),
+	    		    $output: $('output'),
+	
+	        	start: function() {
+					var target = document.getElementById("onBtn");
+	        	    rawModule = $(target).data('measure');
+					$("#thunderPort").css({'transform': 'rotate(-360deg)'});
+					setTimeout( function () {
+						$("#thunderPort").css({'transform': 'rotate(0deg)'});
+					}, 1000);
+	        	    module = rawModule.charAt(0).toUpperCase() + rawModule.slice(1);
+					if( frsstats == 0 ) {
+						document.getElementById("step").innerHTML = "加速しています<br>少々お待ちください<br>（加速はZippyから離れても続きます）";
+					}
+					net[rawModule].start();
+		
+		            // The latency module doesn't have a start event, we must trigger it manually.
+		            if (rawModule == 'latency') {
+	                net[rawModule].trigger('start');
+	            }
+	        },
+	
+	        restart: function(size) {
+	            UI.notice(UI.delimiter(
+	                'The minimum delay of ' + UI.value(8, 'seconds') + ' has not been reached'
+	            ));
+	
+	            UI.notice(UI.delimiter(
+	                'Restarting measures with '
+	                + UI.value(size / 1024 / 1024, 'MB')
+	                + ' of data...'
+	            ));
+	        },
+	
+	        stop: function() {
+	            UI.notice(UI.delimiter('Finished measures'));
+	        },
+	
+	        abort: function() {
+	            net.upload.abort();
+	            net.download.abort();
+	        },
+	
+	        notice: function(text, newSection) {
+	            var $o = UI.$output,
+	                stickToBottom = ($o.scrollTop() + $o.outerHeight()) == $o.prop('scrollHeight');
+	
+	            $o.append('<br>');
+	            newSection && $o.append('<br>');
+	
+	            $o.append('<span class="yellow">[' + module + ']</span> ' + text);
+	
+	            if (stickToBottom) {
+	                $o.scrollTop($o.prop('scrollHeight'));
+	            }
+	        },
+	
+	        value: function(value, unit) {
+	            if (value != null) {
+	                return '<span class="blue">' + value.toFixed(3) * 10 + ' ' + unit + '</span>';
+	            } else {
+	                return '<span class="blue">null</span>';
+	            }
+	        },
+	
+	        delimiter: function(text) {
+	            return '<span class="green">' + text + '</span>';
+	        }
+	    };
+	
+	    /*
+	     * Network.js configuration
+	     */
+	
+	    var net = new Network();
+	
+	    function start(size) {
+	        UI.notice(UI.delimiter(
+	            'Starting ' + rawModule + ' measures'
+	            + (rawModule != 'latency' ? (' with ' + UI.value(size / 1024 / 1024, 'MB') + ' of data') : '')
+	            + '...'
+	        ), true);
+			document.getElementById("displayPort").style.background = "#fcb540";
+			document.getElementById("displayPort").style.borderColor = "#f28608";
+	    }
+	
+	    function progress(avg, instant) {
+	        var output = 'Instant speed: ' + UI.value(instant / 1024 / 1024, 'MBps');
+	            output += ' // Average speed: ' + UI.value(avg / 1024 / 1024, 'MBps');
+	
+	        UI.notice(output);
+	    }
+	
+		    function end(avg) {
+		        if( localStorage.mode == "off" ) {
+					document.getElementById("displayPort").style.background = "#b6b6b6";
+					document.body.style.background = "#191E24";
+					document.getElementById("displayPort").style.borderColor = "#7D7C74";
+				} else {
+					if( frsstats == 0 ) {
+						UI.notice('Final average speed: ' + UI.value(avg / 1024 / 1024, 'MBps'));
+				        UI.stop();
+						lastadapt = avg / 1024 / 1024;
+						frsstats = 1;
+						document.getElementById("step").innerHTML = "あともう少しです...";
+						UI.start();
+					} else {
+						document.getElementById("displayPort").style.background = "#4080FC";
+						document.getElementById("displayPort").style.borderColor = "#0859F2";
+						UI.notice('Final average speed: ' + UI.value(avg / 1024 / 1024, 'MBps'));
+						acadapt = avg / 1024 / 1024;
+						frsstats = 0;
+				        UI.stop();
+						baseadapt = acadapt * 1.1 / lastadapt;
+						console.log(baseadapt);
+						if( baseadapt < 1.1 ) {
+							document.getElementById("step").innerHTML = "早いインターネットを送るために必死に頑張っています...";
+							UI.start();
+						} else {
+							document.getElementById("step").innerHTML = "良いインターネットを！";
+							document.getElementById("result").style.display = "block";
+							document.getElementById("perc").innerHTML = Math.round(baseadapt * 10)/10;
+							setTimeout( function () {
+								document.getElementById("step").innerHTML = "さらにもっと加速しています...";
+								UI.start;
+							}, 900)
+						}
+					}
+				}
+		    }
+		
+		    net.upload.on('start', start).on('progress', progress).on('restart', UI.restart).on('end', end);
+		    net.download.on('start', start).on('progress', progress).on('restart', UI.restart).on('end', end);
+		
+		    net.latency
+		        .on('start', start)
+		        .on('end', function(avg, all) {
+		            all = all.map(function(latency) {
+		                return UI.value(latency, 'ms');
+		            });
+		
+		            all = '[ ' + all.join(' , ') + ' ]';
+		
+		            UI.notice('Instant latencies: ' + all);
+		            UI.notice('Average latency: ' + UI.value(avg, 'ms'));
+		            UI.stop();
+		        });
+		
+		    /*
+			     * Bindings
+		     */
+		
+		    UI.$btnStart.on('click', UI.start);
+		    UI.$btnAbort.on('click', UI.abort);
+	
+		});
+		</script>
+	</body>
+</html>
