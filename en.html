@@ -98,10 +98,10 @@
 				position: fixed;
 				bottom: 55px;
 				left: 10%;
-				background: #f1f1f1;
+				background: #E8F5FD;
 				padding: 10px 0px;
 				border-radius: 6px;
-				border: 1px solid #bfbfbf;
+				border: 1px solid #1DA1F2;
 				width: 80%;
 				margin-top: 25px;
 				margin-right: auto;
@@ -309,6 +309,10 @@
 			.tutbtn:hover {
 				background-color: #E8F5FD;
 			}
+			.loadwrapper {
+				background-color: #1DA1F2;
+				margin-top: 0px;
+			}
 			/*#24384E #7D7C74 #B6B6B6 on: #0859F2 #4080FC #191E24*/
 		</style>
 		<script src="https://prazma.github.io/zippy/js/netboost.stats.js"></script>
@@ -327,7 +331,9 @@
 			<button onclick="turnon()" id="offBtn" class="btnWhite" data-abort style="display: none" data-abort >DISCONNECT</button>
 			<div id="statics">
 				<div id="msg">
+					<button class="loadwrapper"><img height="60px" src="https://s.yimg.com/wm/modern/images/fuji-spinner-1.0.1.svg"><br>
 					<span id="step" style="font-size: 15px">Making your connection faster...<br>Please Wait</span>
+					</button>
 				</div>
 				<div id="result">
 					<span class="bander"><span class="hiseek"><strong style="font-size: 20px">x</strong><span id="perc">0</span></span><br>Faster Now!</span><br>
@@ -377,6 +383,7 @@
 			if(localStorage.mode) {
 				document.getElementById("welcome").style.display = "none";
 				document.getElementById("darklow").style.display = "none";
+				document.getElementById("alertbox").style.display = "none";
 				init();
 			} else {
 				localStorage.mode = "off";
@@ -480,8 +487,8 @@
 					document.getElementById("tutbtn").style.display = "none";
 					document.getElementById("tutstep").innerHTML = "2/3";
 					if( localStorage.tutEnd == "yes" ) {
-						document.getElementById("alertbox").display = "none";
-						document.getElementById("darklow").display = "none";
+						document.getElementById("alertbox").style.display = "none";
+						document.getElementById("darklow").style.display = "none";
 					}
 				}
 				if( step == 3 ) {
@@ -650,8 +657,6 @@
 							if( localStorage.tutEnd == "yes" ) {
 								document.getElementById("alertbox").style.display = "block";
 								steptut(3);
-								document.getElementById("tutheader").innerHTML = "Click DISCONNECT";
-								document.getElementById("tutbody").innerHTML = 'Zippy uses significant amount of battery when connected. When you are able to go off the fast internet, click "DISCONNECT"';
 							}
 							setTimeout( function () {
 								document.getElementById("step").innerHTML = "Maintaining your internet speed...";
