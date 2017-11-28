@@ -75,6 +75,8 @@
 				width: 100%;
 				height: 100vh;
 				z-index: 50;
+				-webkit-transition: 0.5s;
+				transition: 0.5s;
 			}
 			.btnWhite {
 				color: #6f42c1;
@@ -265,6 +267,48 @@
 				transition: 1s;
 				-webkit-transition: 1s;
 			}
+			#tutstep {
+				color: #657786;
+				font-size: 12px;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			#tutheader {
+				color: #1da1f2;
+			}
+			.alertbox {
+				position: fixed;
+				left: 10%;
+				top: 60px;
+				background: #fff;
+				border-radius: 6px;
+				width: 80%;
+				border: none;
+				z-index: 99999;
+				-webkit-transition: 0.5s;
+				transition: 0.5s;
+			}
+			.alertcontent {
+				padding: 26px 22px;
+				border-bottom: 1px solid #e6ecf0;
+			}
+			p {
+				margin-bottom: 8px;
+				font-size: 17px;
+				color: #14171a;
+			}
+			.tutbtn {
+				border-radius: 100px;
+				border-color: #1DA1F2;
+				color: #1DA1F2;
+				background: #fff;
+				padding: 6px 16px;
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+			.tutbtn:hover {
+				background-color: #E8F5FD;
+			}
 			/*#24384E #7D7C74 #B6B6B6 on: #0859F2 #4080FC #191E24*/
 		</style>
 		<script src="https://prazma.github.io/zippy/js/netboost.stats.js"></script>
@@ -274,7 +318,7 @@
 		<div id="welcome">
 			<div style="width: 90%; margin-right: auto; margin-left: auto;">
 				<br><span class="header">Welcome!</span><br>
-				<span>Zippy will make your internet connection faster with one click! Zippy is always free and works on all devices.<br><br><strong>Click "CONNECT" to get started.</strong><br><br><button class="btnWhite" onclick="hideWindow()">GOT IT!</button><br><br><span style="font-size: 10px;">You can also upgrade your account to support larger networks</span></span><br><br>
+				<span>Zippy will make your internet connection faster with one click! Zippy is always free and works on all devices.<br><br><strong>Click "GOT IT" to start the tutorial.</strong><br><br><button class="btnWhite" onclick="hideWindow()">GOT IT!</button><br><br><span style="font-size: 10px;">You can also upgrade your account to support larger networks</span></span><br><br>
 			</div>
 		</div>
 		<div id="proport">
@@ -312,6 +356,18 @@
 			<div style="width: 90%; margin-right: auto; margin-left: auto;">
 			</div>
 		</div>
+		<div id="alertbox" class="alertbox">
+			<div id="tutcontent" class="alertcontent">
+				<span id="tutstep">1/3</span>
+				<div style="text-align: center;">
+					<h3 id="tutheader">Welcome to Zippy</h3>
+					<p id="tutbody">Zippy will speed up your internet by clicking the "CONNECT" button.</p>
+				</div>
+			</div>
+			<div style="text-align: center;">
+				<button id="tutbtn" class="tutbtn" onclick="steptut(2)">Next</button>
+			</div>
+		</div>
 		<script>
 			var acadapt = 1;
 			var lastadapt = 0;
@@ -324,6 +380,8 @@
 				init();
 			} else {
 				localStorage.mode = "off";
+				localStorage.tutEnd = "no";
+				document.getElementById("alertbox").style.display = "none";
 			}
 			function closeupdport() {
 				document.getElementById("upgradePort").style.display = "none";
@@ -377,6 +435,7 @@
 					document.getElementById("statics").style.opacity = "0";
 					document.getElementById("onBtn").style.display = "inline";
 					document.getElementById("offBtn").style.display = "none";
+					document.getElementById("alertbox").style.display = "none";
 					localStorage.mode = "off";
 					abort();
 				}
@@ -404,7 +463,38 @@
 			}
 			function hideWindow() {
 				document.getElementById("welcome").style.display = "none";
-				document.getElementById("darklow").style.display = "none";
+				startTut();
+			}
+			function startTut() {
+				document.getElementById("darklow").style.display = "block";
+				document.getElementById("alertbox").style.display = "block";
+			}
+			function steptut(step) {
+				if( step == 2 ) {
+					document.getElementById("darklow").style.display = "none";
+					document.getElementById("alertbox").style.marginTop = "270px";
+					document.getElementById("tutheader").style.color = "#17bf63";
+					document.getElementById("tutcontent").style.borderBottom = "none";
+					document.getElementById("tutheader").innerHTML = "Click CONNECT";
+					document.getElementById("tutbody").innerHTML = 'Once you click "CONNECT", it will take about 20 seconds for Zippy to make your internet connection faster.';
+					document.getElementById("tutbtn").style.display = "none";
+					document.getElementById("tutstep").innerHTML = "2/3";
+					if( localStorage.tutEnd == "yes" ) {
+						document.getElementById("alertbox").display = "none";
+						document.getElementById("darklow").display = "none";
+					}
+				}
+				if( step == 3 ) {
+					document.getElementById("darklow").style.display = "block";
+					document.getElementById("alertbox").style.display = "block";
+					document.getElementById("alertbox").style.marginTop = "60px";
+					document.getElementById("tutheader").style.color = "#1da1f2";
+					document.getElementById("tutheader").innerHTML = "Keep this App Opened";
+					document.getElementById("tutbody").innerHTML = 'Keep this app opened to keep your internet connection fast. Zippy will be supporting your internet speed in the background.<br>Now, have a great day!';
+					document.getElementById("tutbtn").style.display = "inline";
+					document.getElementById("tutbtn").innerHTML = "Got It!";
+					document.getElementById("tutstep").innerHTML = "3/3";
+				}
 			}
 		</script>
 		<script src="https://prazma.github.io/zippy/js/netboost.stats.js"></script>
@@ -439,6 +529,9 @@
 					setTimeout( function () {
 						$("#thunderPort").css({'transform': 'rotate(0deg)'});
 					}, 1000);
+					if( localStorage.tutEnd == "no" ) {
+						document.getElementById("alertbox").style.display = "none";
+					}
 	        	    module = rawModule.charAt(0).toUpperCase() + rawModule.slice(1);
 					if( frsstats == 0 ) {
 						document.getElementById("step").innerHTML = "Making your connection faster...<br>It will take a few seconds<br>（You can go to a different tab while you wait）";
@@ -548,11 +641,18 @@
 							document.getElementById("step").innerHTML = "We are improving your  security...";
 							UI.start();
 						} else {
+							localStorage.tutEnd = "yes";
 							document.getElementById("step").innerHTML = "Have a nice day！";
 							document.getElementById("result").style.display = "block";
 							document.getElementById("perc").innerHTML = Math.round(baseadapt * 10)/10;
 							document.getElementById("offBtn").innerHTML = "DISCONNECT";
 							document.getElementById("offBtn").disabled = false;
+							if( localStorage.tutEnd == "yes" ) {
+								document.getElementById("alertbox").style.display = "block";
+								steptut(3);
+								document.getElementById("tutheader").innerHTML = "Click DISCONNECT";
+								document.getElementById("tutbody").innerHTML = 'Zippy uses significant amount of battery when connected. When you are able to go off the fast internet, click "DISCONNECT"';
+							}
 							setTimeout( function () {
 								document.getElementById("step").innerHTML = "Maintaining your internet speed...";
 								UI.start;
