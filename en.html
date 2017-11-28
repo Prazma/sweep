@@ -526,7 +526,7 @@
 			        $btnStart: $('[data-measure]'),
 	    		    $btnAbort: $('#offBtn'),
 	    		    $output: $('output'),
-	
+		
 	        	start: function() {
 					var target = document.getElementById("onBtn");
 	        	    rawModule = $(target).data('measure');
@@ -541,7 +541,7 @@
 					}
 	        	    module = rawModule.charAt(0).toUpperCase() + rawModule.slice(1);
 					if( frsstats == 0 ) {
-						document.getElementById("step").innerHTML = "Making your connection faster...<br>It will take a few seconds<br>（You can go to a different tab while you wait）";
+						document.getElementById("step").innerHTML = "Making your connection faster...";
 					}
 					net[rawModule].start();
 		
@@ -550,23 +550,23 @@
 	                net[rawModule].trigger('start');
 	            }
 	        },
-	
+		
 	        restart: function(size) {
 	            UI.notice(UI.delimiter(
 	                'The minimum delay of ' + UI.value(8, 'seconds') + ' has not been reached'
 	            ));
-	
+		
 	            UI.notice(UI.delimiter(
 	                'Restarting measures with '
 	                + UI.value(size / 1024 / 1024, 'MB')
 	                + ' of data...'
 	            ));
 	        },
-	
+		
 	        stop: function() {
 	            UI.notice(UI.delimiter('Finished measures'));
 	        },
-	
+		
 	        abort: function() {
 	            net.upload.abort();
 	            net.download.abort();
